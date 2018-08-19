@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: lightGray;" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainWindowController">
+   <children>
+      <TableView fx:id="tableViewUczen" editable="true" layoutX="132.0" layoutY="39.0" prefHeight="186.0" prefWidth="334.0" style="-fx-border-color: black;" AnchorPane.bottomAnchor="374.0" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="366.0" AnchorPane.topAnchor="40.0">
+        <columns>
+          <TableColumn fx:id="idUczniaColumn" maxWidth="500.0" minWidth="30.0" prefWidth="59.0" text="IDU" />
+          <TableColumn fx:id="nazwiskoUczniaColumn" minWidth="70.0" prefWidth="146.0" text="Nazwisko Ucznia" />
+            <TableColumn fx:id="imieUczniaColumn" maxWidth="5100.0" prefWidth="132.0" text="Imię Ucznia" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <TableView fx:id="tableViewNauczyciel" editable="true" layoutX="100.0" layoutY="309.0" prefHeight="186.0" prefWidth="334.0" style="-fx-border-color: black;" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="366.0">
+         <columns>
+            <TableColumn fx:id="idNauczycielaColumn" maxWidth="500.0" minWidth="30.0" prefWidth="59.0" text="IDN" />
+            <TableColumn fx:id="nazwiskoNauczycielaColumn" minWidth="70.0" prefWidth="144.0" text="Nazwisko Nauczyciela" />
+            <TableColumn fx:id="imieNauczycielaColumn" prefWidth="129.0" text="Imię Nauczyciela" />
+         </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <Button layoutX="14.0" layoutY="75.0" mnemonicParsing="false" onAction="#loadFromUczenTable" prefHeight="58.0" prefWidth="74.0" style="-fx-border-color: black;" text="Wczytaj Uczniów" textAlignment="CENTER" wrapText="true" />
+      <Button layoutX="14.0" layoutY="344.0" mnemonicParsing="false" onAction="#loadFromNauczycielTable" prefHeight="58.0" prefWidth="81.0" style="-fx-border-color: black;" text="Wczytaj Nauczycieli" textAlignment="CENTER" wrapText="true" />
+      <TableView fx:id="tableViewPrzedmiot" editable="true" layoutX="464.0" layoutY="40.0" prefHeight="186.0" prefWidth="200.0" style="-fx-border-color: black;" AnchorPane.bottomAnchor="374.0" AnchorPane.leftAnchor="464.0" AnchorPane.rightAnchor="136.0" AnchorPane.topAnchor="40.0">
+        <columns>
+          <TableColumn fx:id="idPrzedmiotuColumn" maxWidth="96.0" minWidth="0.0" prefWidth="44.0" resizable="false" text="IDP" />
+          <TableColumn fx:id="nazwaPrzedmiotuColumn" maxWidth="350.0" minWidth="-Infinity" prefWidth="154.0" text="Nazwa Przedmiotu" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <TableView fx:id="tableViewOcena" editable="true" layoutX="464.0" layoutY="309.0" prefHeight="186.0" prefWidth="200.0" style="-fx-border-color: black;">
+        <columns>
+          <TableColumn fx:id="idOcenyColumn" maxWidth="300.0" minWidth="30.0" prefWidth="50.0" text="IDO" />
+          <TableColumn fx:id="ocenaOpisColumn" minWidth="0.0" prefWidth="111.0" text="Ocena opis" />
+            <TableColumn fx:id="ocenaColumn" maxWidth="2000.0" minWidth="5.0" prefWidth="50.0" text="Ocena" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <Button layoutX="678.0" layoutY="75.0" mnemonicParsing="false" onAction="#loadFromPrzedmiotTable" prefHeight="58.0" prefWidth="74.0" style="-fx-border-color: black;" text="Wczytaj Przedmiot" textAlignment="CENTER" wrapText="true" />
+      <Button layoutX="678.0" layoutY="344.0" mnemonicParsing="false" onAction="#loadFromOcenaTable" prefHeight="58.0" prefWidth="74.0" style="-fx-border-color: black;" text="Wczytaj Ocenę" textAlignment="CENTER" wrapText="true" />
+      <HBox layoutX="169.0" layoutY="542.0" style="-fx-border-color: black;">
+         <children>
+            <TextField fx:id="idnTF" prefHeight="24.0" prefWidth="81.0" />
+            <TextField fx:id="iduTF" prefHeight="24.0" prefWidth="81.0" />
+            <TextField fx:id="idpTF" prefHeight="24.0" prefWidth="81.0" />
+            <TextField fx:id="idoTF" prefHeight="24.0" prefWidth="81.0" />
+         </children>
+      </HBox>
+      <Label layoutX="197.0" layoutY="514.0" text="IDN" />
+      <Label layoutX="263.0" layoutY="514.0" text="IDU" />
+      <Label layoutX="350.0" layoutY="514.0" text="IDP" />
+      <Label layoutX="434.0" layoutY="514.0" text="IDO" />
+      <Button layoutX="678.0" layoutY="513.0" mnemonicParsing="false" onAction="#saveToTable" prefHeight="58.0" prefWidth="74.0" style="-fx-border-color: black;" text="Oceń" />
+      <ChoiceBox fx:id="rodzajOcenyBox" layoutX="493.0" layoutY="542.0" prefHeight="25.0" prefWidth="135.0" style="-fx-border-color: black;" />
+      <Label layoutX="528.0" layoutY="514.0" text="Rodzaj Oceny" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,1 @@
+Aplikacja JAVA FX za pomoc¹ programu SQL Developer oraz bazy danych Oracle Database 11g Express Edition tworzy tabele w bazie danych które nastêpnie pobiera do interfejsu graficznego JAVA. Dodatkowo istnieje mo¿liwoœæ zapisu do bazy danych nowej tabeli zawieraj¹cej wybrane przez u¿ytkownika dane.
